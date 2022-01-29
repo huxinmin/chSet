@@ -1,0 +1,41 @@
+{
+  "name": "chset",
+  "version": "1.0.0",
+  "description": "简单快速替换目录或多个文件中的一些配置项",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "cd ./test && node index.js",
+    "clean": "rimraf lib",
+    "compile": "tsc --build tsconfig.json",
+    "build": "npm run clean && npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huxinmin/chSet.git"
+  },
+  "keywords": [
+    "配置替换",
+    "文本替换",
+    "replace"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "author": "huxinmin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huxinmin/chSet/issues"
+  },
+  "homepage": "https://github.com/huxinmin/chSet#readme",
+  "dependencies": {
+    "ajv": "^8.9.0",
+    "glob": "^7.2.0",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/node": "^17.0.13",
+    "rimraf": "^3.0.2"
+  }
+}
