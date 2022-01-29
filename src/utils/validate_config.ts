@@ -14,7 +14,8 @@ function validateConfig (config:IConfig) {
           type: "string"
         }
       },
-      test:{ type: "object" },
+      //TODO string or regex validate
+      // test:{ type: "object" },
       //TODO function validate
       // transform: {type: "string" }
     },
