@@ -1,5 +1,5 @@
 import type { IConfig } from '../types';
-declare type IParams = Omit<IConfig, 'ignore' | 'encoding' | 'files' | 'test'> & {
+declare type IParams = Omit<IConfig, 'ignore' | 'encoding' | 'src' | 'test'> & {
     file: string;
     contents: string;
     test: RegExp[];

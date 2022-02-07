@@ -1,3 +1,3 @@
-const FOO = 'foo';
+const FOO = 'FOO';
 
 const too = 'too';

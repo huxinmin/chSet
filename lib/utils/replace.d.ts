@@ -1,5 +1,5 @@
 import type { IConfig } from '../types';
-declare function replace({ file, test, transform, encoding }: Omit<IConfig, 'files' | 'test'> & {
+declare function replace({ file, test, transform, encoding }: Omit<IConfig, 'src' | 'test'> & {
     file: string;
     test: RegExp[];
 }): {

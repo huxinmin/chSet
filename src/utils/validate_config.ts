@@ -6,9 +6,14 @@ function validateConfig (config:IConfig) {
   const schema = {
     type: "object",
     properties: {
-      ignore: { type: "integer" },
+      ignore: {
+        type: "array",
+        items: {
+          type: "string"
+        }
+      },
       encoding: { type: "string" },
-      files: {
+      src: {
         type: "array",
         items: {
           type: "string"
@@ -19,7 +24,7 @@ function validateConfig (config:IConfig) {
       //TODO function validate
       // transform: {type: "string" }
     },
-    required: ["files", "test", "transform"],
+    required: ["src", "test", "transform"],
     additionalProperties: true,
   }
 

@@ -1,6 +1,6 @@
 import type { IConfig } from '../types';
 
-type IParams  = Omit<IConfig, 'ignore'|'encoding' | 'files' | 'test'> & {file: string, contents: string, test: RegExp[]}
+type IParams  = Omit<IConfig, 'ignore'|'encoding' | 'src' | 'test'> & {file: string, contents: string, test: RegExp[]}
 
 function doReplace({contents, test, transform, file}: IParams ) {
   const result = {file, hasChanged:false};

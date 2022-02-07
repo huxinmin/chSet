@@ -2,7 +2,7 @@ import type { IConfig } from '../types';
 import doReplace from './do_replace';
 const fs = require('fs');
 
-function replace({file, test, transform, encoding}: Omit<IConfig, 'files'| 'test'> & {file: string, test: RegExp[]}) {
+function replace({file, test, transform, encoding}: Omit<IConfig, 'src'| 'test'> & {file: string, test: RegExp[]}) {
   const contents = fs.readFileSync(file, encoding).toString();
 
   const {result, newContents} = doReplace(
