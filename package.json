@@ -1,6 +1,6 @@
 {
   "name": "chset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "简单快速替换目录或多个文件中的一些配置项",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
