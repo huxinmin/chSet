@@ -16,7 +16,7 @@ yarn add chset
 ```js
 const options = {
   src: ['./*.js'],
-  test: /FOO|FOO/g,
+  test: /FOO/g,
   ignore:['*.html'],
   transform: (text) => text.toUpperCase()
 };
@@ -27,7 +27,7 @@ chSet(options);
 ```js
 const options = {
   src: ['./lib', './test'],
-  test: /FOO|FOO/g,
+  test: /FOO/g,
   ignore:['*.html'],
   transform: (text) => text.toUpperCase()
 };

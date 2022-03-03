@@ -2,7 +2,7 @@ const chSet = require('../lib/index');
 
 const options = {
   src: ['./*.js'],
-  test: 'FOO',
+  test: /TOO/ig,
   transform: (text) => text.toUpperCase()
 };
 

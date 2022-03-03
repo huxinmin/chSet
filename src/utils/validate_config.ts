@@ -1,39 +1,20 @@
 import type { IConfig } from '../types';
-const Ajv = require('ajv')
+const Joi = require('joi');
 
 function validateConfig (config:IConfig) {
-  const ajv = new Ajv();
-  const schema = {
-    type: "object",
-    properties: {
-      ignore: {
-        type: "array",
-        items: {
-          type: "string"
-        }
-      },
-      encoding: { type: "string" },
-      src: {
-        type: "array",
-        items: {
-          type: "string"
-        }
-      },
-      //TODO string or regex validate
-      // test:{ type: "object" },
-      //TODO function validate
-      // transform: {type: "string" }
-    },
-    required: ["src", "test", "transform"],
-    additionalProperties: true,
-  }
+  const schema = Joi.object({
+    ignore: Joi.array().items(Joi.string()),
+    encoding: Joi.string(),
+    src: Joi.array().items(Joi.string()).required(),
+    test: Joi.alternatives().try(Joi.string(), Joi.object().regex()).required(),
+    transform: Joi.function().required()
+  });
 
-  const validate = ajv.compile(schema)
+  const validate = schema.validate(config);
 
-  if (!validate(config)) {
-    const error = validate.errors[0];
+  if (validate?.error) {
     //@ts-ignore
-    throw new Error(error?.instancePath + ':' + error?.message);
+    throw new Error(validate?.error);
   }
 }
 
